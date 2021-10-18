@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 // import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 // Service is a child class of Component so which ever should work
 @Component
 public class AirportService {
@@ -17,5 +19,8 @@ public class AirportService {
     }
     public Airport addAirport(Airport airport){
         return airportDAO.save(airport);
+    }
+    public List<Airport> getAirports(){
+        return airportDAO.findAll();
     }
 }
